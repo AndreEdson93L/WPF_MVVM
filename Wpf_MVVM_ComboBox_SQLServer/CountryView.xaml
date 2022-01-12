@@ -1,0 +1,24 @@
+﻿<Window x:Class="Wpf_MVVM_ComboBox_SQLServer.CountryView"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:Wpf_MVVM_ComboBox_SQLServer"
+        mc:Ignorable="d"
+        Title="CountryView" Height="450" Width="850">
+    <Window.DataContext>
+        <local:CountryViewModel/>
+    </Window.DataContext>
+    <StackPanel Background="CadetBlue">
+        <TextBlock Margin="10" Text="WPF" HorizontalAlignment="Center" FontSize="30"/>
+        <TextBlock Margin="10" Text="MVVM : Get data from SQL Server, display into a combo_box" HorizontalAlignment="Center" FontSize="30"/>
+        <ComboBox x:Name="cmbEmployees" Margin="10"
+                  DisplayMemberPath="CountryName"
+                  SelectedItem="{Binding SelectedCountry, UpdateSourceTrigger=PropertyChanged}"
+                  ItemsSource="{Binding CountryList}"
+                  Height="46"
+                  Width="300"/>
+        <Label Content="Greeting:" FontSize="30"/>
+        <Label Content="{Binding Hello}" Height="50" FontSize="30"/>
+    </StackPanel>
+</Window>
