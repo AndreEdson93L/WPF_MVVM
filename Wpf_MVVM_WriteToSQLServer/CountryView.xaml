@@ -1,0 +1,22 @@
+﻿<Window x:Class="Wpf_MVVM_WriteToSQLServer.CountryView"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:Wpf_MVVM_WriteToSQLServer"
+        mc:Ignorable="d"
+        Title="CountryView" Height="450" Width="800">
+    <Window.DataContext>
+        <local:CountryViewModel/>
+    </Window.DataContext>
+    <StackPanel Background="BlanchedAlmond">
+        <Label FontSize="30"  Height="45" Content="WPF" HorizontalAlignment="Center"/>
+        <Label FontSize="30"  Height="45" Content="MVVM : Write date to SQL Server" HorizontalAlignment="Center"/>
+        <TextBlock FontSize="30"  Height="45" Text="Country name:" HorizontalAlignment="Center"/>
+        <TextBox FontSize="30"  Height="45" Width="300" Text="{Binding CountryName, UpdateSourceTrigger=PropertyChanged}" HorizontalAlignment="Center"/>
+        <TextBlock FontSize="30"  Height="45" Text="Greeting:" HorizontalAlignment="Center"/>
+        <TextBox FontSize="30"  Height="45" Width="300" Text="{Binding Greeting, UpdateSourceTrigger=PropertyChanged}" HorizontalAlignment="Center"/>
+        <TextBlock FontSize="30"  Height="45" Margin="10" Text="{Binding ErrorMessage, UpdateSourceTrigger=PropertyChanged}" HorizontalAlignment="Center"/>
+        <Button Content="Save" FontSize="30"  Height="45" Width="100" Command="{Binding cmdSave}" HorizontalAlignment="Center" Margin="10"/>
+    </StackPanel>
+</Window>
